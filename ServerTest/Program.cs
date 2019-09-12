@@ -13,8 +13,15 @@ namespace ServerTest
         static void Main(string[] args)
         {
 
+            SS.Test.Handler.AppStart.Start();
+
+
 
             Console.WriteLine("按任意键退出");
+
+
+
+
 
             Console.ReadLine();
         }

@@ -88,6 +88,10 @@
       <Project>{22385473-a0f9-49ad-9378-cc4fdcb62cc6}</Project>
       <Name>SS.Service</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SS.Test.Handler\SS.Test.Handler.csproj">
+      <Project>{a7f7a7b3-ed47-40f1-bf3e-35a24197e1d8}</Project>
+      <Name>SS.Test.Handler</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

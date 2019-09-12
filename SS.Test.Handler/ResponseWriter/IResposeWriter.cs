@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace SS.Test.Handler.ResponseWriter
 {
-    public interface IResposeWriter
-    {
-        void Write(string InputText);
-        void Write(byte[] Buffer);
+    //public interface IResposeWriter
+    //{
+    //    void Write(string InputText);
+    //    void Write(byte[] Buffer);
 
-        void Write(byte[] Buffer, int Offset, int Length);
-    }
+    //    void Write(byte[] Buffer, int Offset, int Length);
+    //}
 }

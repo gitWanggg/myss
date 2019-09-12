@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SS.Service
 {
-    class RouteConfig
+    public class RouteConfig
     {
         static Dictionary<string, ChainBuilder> DicBuilder;
         public static ChainBuilder FindBuilder(string RouteKey)

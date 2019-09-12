@@ -9,7 +9,7 @@ using SuperSocket.SocketBase.Protocol;
 using SuperSocket.SocketBase;
 namespace SS.Test.Handler
 {
-    class InstanceStringFilterFactory:WrapReceiveFilterFactory
+    public class InstanceStringFilterFactory:WrapReceiveFilterFactory
     {
       
         IReceiveFilter<InstanceRequestInfo> IRFilter;
@@ -25,6 +25,7 @@ namespace SS.Test.Handler
             IParse = new StringParseRequest();
             BeginEndReceiveFilter begFilter = new BeginEndReceiveFilter(RConstant.BeginMarkByte, RConstant.EndMarkByte);
             begFilter.IParse = IParse;
+            IRFilter = begFilter;
         }
         public override IReceiveFilter<InstanceRequestInfo> CreateFilter(IAppServer appServer, IAppSession appSession, IPEndPoint remoteEndPoint)
         {
