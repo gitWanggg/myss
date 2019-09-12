@@ -14,6 +14,10 @@ namespace SS.Service
         {
 
         }
+        public void SettingBody(byte[] body)
+        {
+            base.Initialize(this.Key, body);
+        }
         /// <summary>
         /// 实例唯一标识
         /// </summary>

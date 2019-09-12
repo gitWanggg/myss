@@ -35,6 +35,9 @@
       <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\LIB\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="SuperSocket.Common, Version=1.6.6.1, Culture=neutral, PublicKeyToken=6c80000676988ebb, processorArchitecture=MSIL">
       <HintPath>..\packages\SuperSocket.1.6.6.1\lib\net45\SuperSocket.Common.dll</HintPath>
       <Private>True</Private>
@@ -71,6 +74,8 @@
     <Compile Include="Chain\InstanceHandler.cs" />
     <Compile Include="Chain\RouteHandler.cs" />
     <Compile Include="Chain\SortEndHandler.cs" />
+    <Compile Include="Command\AddArgs.cs" />
+    <Compile Include="Command\AddArgsResult.cs" />
     <Compile Include="Command\AddCommand.cs" />
     <Compile Include="Command\CommandRoutes.cs" />
     <Compile Include="Escape\UrlEscape.cs" />

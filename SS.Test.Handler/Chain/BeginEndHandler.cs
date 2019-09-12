@@ -12,7 +12,7 @@ namespace SS.Test.Handler.Chain
 
         protected override bool HandBegin(HanderContext HContext)
         {
-           HContext.Respose.OutputStream.Write(RConstant.BeginMarkByte, 0, 2);
+            HContext.Respose.OutputStream.Write(RConstant.BeginMarkByte, 0, 2);
             return false;
         }
 

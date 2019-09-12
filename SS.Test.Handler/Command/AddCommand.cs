@@ -19,7 +19,16 @@ namespace SS.Test.Handler.Command
 
         protected override byte[] HandAction(HanderContext context)
         {
-            throw new NotImplementedException();
+            string InputString = System.Text.Encoding.UTF8.GetString(context.RequestInfo.Body);
+            AddArgs Args = Newtonsoft.Json.JsonConvert.DeserializeObject<AddArgs>(InputString);
+            int j = Args.Arg1 + Args.Arg2;
+            AddArgsResult addR = new AddArgsResult();
+            addR.R = j;
+            addR.Name = "张三##lll%%";
+            addR.Url = System.Web.HttpUtility.UrlEncode("http://www.baidu.com/jj?c=203&jj=王&&ww=%001&jj=#####");
+            string jsonR =Newtonsoft.Json.JsonConvert.SerializeObject(addR);
+            byte[] bR = System.Text.Encoding.UTF8.GetBytes(jsonR);
+            return bR;
         }
     }
 }

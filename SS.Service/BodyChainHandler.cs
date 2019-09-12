@@ -18,7 +18,8 @@ namespace SS.Service
         }
         protected override bool HandBegin(HanderContext HContext)
         {
-           // byte[] bufferSource = Escaper == null ? HContext.Respose.BodyBuffer : Escaper.ParseByte(HContext.Respose.BodyBuffer);
+            if (HContext.RequestInfo.Body != null && HContext.RequestInfo.Body.Length > 0&&Escaper!=null)
+                HContext.RequestInfo.SettingBody(Escaper.DecodeByte(HContext.RequestInfo.Body));           
             byte[] buffSource = HContext.ActionHandler == null ? null : HContext.ActionHandler(HContext);
 
             if (buffSource != null && buffSource.Length > 0) {

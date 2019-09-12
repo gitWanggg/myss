@@ -19,6 +19,8 @@ namespace SS.Service
             context.ActionHandler = HandAction;
             StreamChainHandler chainH = ChainFactory.Create(this.Name);
             chainH.HandStream(context);
+            byte[] hR = context.Respose.ToBytes();
+            session.Send(hR, 0, hR.Length);
         }
 
         protected abstract byte[] HandAction(HanderContext context);

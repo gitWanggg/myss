@@ -17,5 +17,16 @@ namespace SS.Test.Handler.Escape
         {
             return System.Web.HttpUtility.UrlEncodeToBytes(InputByte);
         }
+
+
+        public string DecodeString(string InputString)
+        {
+            return System.Web.HttpUtility.UrlDecode(InputString);
+        }
+
+        public byte[] DecodeByte(byte[] InputByte)
+        {
+            return System.Web.HttpUtility.UrlDecodeToBytes(InputByte);
+        }
     }
 }

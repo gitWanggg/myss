@@ -11,5 +11,9 @@ namespace SS.Service
         string ParseString(string InputString);
 
         byte[] ParseByte(byte[] InputByte);
+
+        string DecodeString(string InputString);
+
+        byte[] DecodeByte(byte[] InputByte);
     }
 }
