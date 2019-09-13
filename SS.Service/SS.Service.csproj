@@ -72,6 +72,7 @@
     <Compile Include="Chain\StreamChainHandler.cs" />
     <Compile Include="Context\IParseRequestable.cs" />
     <Compile Include="IServiceStrategy.cs" />
+    <Compile Include="SSException.cs" />
     <Compile Include="WrapActionCommand.cs" />
     <Compile Include="ExceptionEventArgs.cs" />
     <Compile Include="Context\InstanceRequestInfo.cs" />
