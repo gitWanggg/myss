@@ -74,15 +74,21 @@
     <Compile Include="Chain\InstanceHandler.cs" />
     <Compile Include="Chain\RouteHandler.cs" />
     <Compile Include="Chain\SortEndHandler.cs" />
-    <Compile Include="Command\AddArgs.cs" />
-    <Compile Include="Command\AddArgsResult.cs" />
+    <Compile Include="Command\assist\AddArgs.cs" />
+    <Compile Include="Command\assist\AddArgsResult.cs" />
     <Compile Include="Command\AddCommand.cs" />
-    <Compile Include="Command\CommandRoutes.cs" />
+    <Compile Include="Command\assist\AutoLoginAttribute.cs" />
+    <Compile Include="Command\assist\Login.cs" />
+    <Compile Include="Command\assist\CommandRoutes.cs" />
+    <Compile Include="Command\HeartPackageCommand.cs" />
+    <Compile Include="Command\LoginCommand.cs" />
     <Compile Include="Escape\UrlEscape.cs" />
     <Compile Include="InstanceStringFilterFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RConstant.cs" />
+    <Compile Include="Strategy\UniqueStrategy.cs" />
     <Compile Include="StringParseRequest.cs" />
+    <Compile Include="UniqueServer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SS.Service\SS.Service.csproj">

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SS.Service;
 namespace SS.Test.Handler.Command
 {
+    //[assist.AutoLogin]
     public class AddCommand:WrapActionCommand
     {
         public override string Name
@@ -19,6 +20,9 @@ namespace SS.Test.Handler.Command
 
         protected override byte[] HandAction(HanderContext context)
         {
+            context.WrapSession.Logger.Debug("这是一个消息");
+
+           
             string InputString = System.Text.Encoding.UTF8.GetString(context.RequestInfo.Body);
             AddArgs Args = Newtonsoft.Json.JsonConvert.DeserializeObject<AddArgs>(InputString);
             int j = Args.Arg1 + Args.Arg2;

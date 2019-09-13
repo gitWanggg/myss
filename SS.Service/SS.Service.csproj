@@ -66,23 +66,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BeginEndReceiveFilter.cs" />
-    <Compile Include="BodyChainHandler.cs" />
-    <Compile Include="ChainBuilder.cs" />
-    <Compile Include="ChainFactory.cs" />
-    <Compile Include="EnumChainStatus.cs" />
-    <Compile Include="HanderContext.cs" />
+    <Compile Include="Chain\BodyChainHandler.cs" />
+    <Compile Include="Chain\ChainBuilder.cs" />
+    <Compile Include="Chain\ChainFactory.cs" />
+    <Compile Include="Chain\EnumChainStatus.cs" />
+    <Compile Include="Context\HanderContext.cs" />
     <Compile Include="IEscapeable.cs" />
-    <Compile Include="ResponseInfo.cs" />
-    <Compile Include="RouteConfig.cs" />
-    <Compile Include="StreamChainHandler.cs" />
-    <Compile Include="IParseRequestable.cs" />
+    <Compile Include="Context\ResponseInfo.cs" />
+    <Compile Include="AppBoot\RouteConfig.cs" />
+    <Compile Include="Chain\StreamChainHandler.cs" />
+    <Compile Include="Context\IParseRequestable.cs" />
+    <Compile Include="IServiceStrategy.cs" />
     <Compile Include="WrapActionCommand.cs" />
     <Compile Include="ExceptionEventArgs.cs" />
-    <Compile Include="InstanceRequestInfo.cs" />
+    <Compile Include="Context\InstanceRequestInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceRunEventArgs.cs" />
-    <Compile Include="StartArgs.cs" />
-    <Compile Include="Startup.cs" />
+    <Compile Include="AppBoot\ServiceRunEventArgs.cs" />
+    <Compile Include="AppBoot\StartArgs.cs" />
+    <Compile Include="AppBoot\Startup.cs" />
     <Compile Include="WrapAppServer.cs" />
     <Compile Include="WrapAppSession.cs" />
     <Compile Include="WrapReceiveFilterFactory.cs" />
@@ -91,10 +92,12 @@
     <None Include="Config\log4net.config" />
     <None Include="Config\log4net.unix.config" />
     <None Include="packages.config" />
-    <None Include="supersocket.cmd" />
-    <None Include="supersocket.sh" />
+    <None Include="Config\supersocket.cmd" />
+    <None Include="Config\supersocket.sh" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Extend\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

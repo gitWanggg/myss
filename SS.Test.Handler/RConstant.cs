@@ -15,5 +15,7 @@ namespace SS.Test.Handler
         public readonly static byte[] EndMarkByte = new byte[] { 0x25, 0x25 };//%%
 
         public readonly static byte Semicolon = 0x3B;
+
+        public static readonly string UserUniqueKey = "userUnique";
     }
 }
