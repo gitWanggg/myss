@@ -44,6 +44,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Newtonsoft.Json.dll" />
+    <Content Include="SuperSocket.Common.dll" />
+    <Content Include="SuperSocket.Common.pdb" />
+    <Content Include="SuperSocket.Common.xml" />
+    <Content Include="SuperSocket.Facility.dll" />
+    <Content Include="SuperSocket.Facility.pdb" />
+    <Content Include="SuperSocket.Facility.XML" />
+    <Content Include="SuperSocket.SocketBase.dll" />
+    <Content Include="SuperSocket.SocketBase.pdb" />
+    <Content Include="SuperSocket.SocketBase.xml" />
+    <Content Include="SuperSocket.SocketEngine.dll" />
+    <Content Include="SuperSocket.SocketEngine.pdb" />
+    <Content Include="SuperSocket.SocketEngine.XML" />
+    <Content Include="SuperSocket.SocketService.exe" />
+    <Content Include="SuperSocket.SocketService.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="supersocket.cmd" />
+    <None Include="supersocket.sh" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
