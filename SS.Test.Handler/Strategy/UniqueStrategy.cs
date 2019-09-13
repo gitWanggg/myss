@@ -42,8 +42,11 @@ namespace SS.Test.Handler.Strategy
             lock (objLock) {
                 if (dicKeys.ContainsKey(UserID)) {
                     string sessionid = FindSession(UserID);
-                    WrapAppSession sessSource = appSession.AppServer.GetSessionByID(sessionid);
-                    sessSource.Close();                    
+                    if (!string.IsNullOrEmpty(sessionid)) {
+                        WrapAppSession sessSource = appSession.AppServer.GetSessionByID(sessionid);
+                        if(sessSource!=null)
+                            sessSource.Close();                        
+                    }
                 }
                 dicKeys.Add(UserID, appSession.SessionID);
             }

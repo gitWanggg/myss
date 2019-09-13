@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SS.Service;
 namespace SS.Test.Handler.Command
 {
-    //[assist.AutoLogin]
+    [assist.AutoLogin]
     public class AddCommand:WrapActionCommand
     {
         public override string Name
