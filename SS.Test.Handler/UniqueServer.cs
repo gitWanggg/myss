@@ -28,7 +28,7 @@ namespace SS.Test.Handler
         //}
         protected override void OnSessionClosed(WrapAppSession session, CloseReason reason)
         {
-            UniqueGy.Remove(session.UserID);
+            UniqueGy.Remove(session.UserID,session.SessionID);
             base.OnSessionClosed(session, reason);
         }
     }
