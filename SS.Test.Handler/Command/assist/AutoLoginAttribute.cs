@@ -39,7 +39,7 @@ namespace SS.Test.Handler.Command.assist
                 }
             }
             else
-                commandContext.Cancel = true;
+                {commandContext.Cancel = true;}
         }
     }
 }

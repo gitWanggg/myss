@@ -22,15 +22,17 @@ namespace SS.Test.Handler.Strategy
 
         public string FindSession(string UserID)
         {
-            return dicKeys[UserID];
+            if (dicKeys.ContainsKey(UserID))
+                return dicKeys[UserID];
+            else
+                return null;
         }
-        public void Remove(string UserID)
+        public void Remove(string UserID,string sessionid)
         {
 
             if (string.IsNullOrEmpty(UserID))
                 return;
-
-            if (dicKeys.ContainsKey(UserID)) {
+            if (dicKeys.ContainsKey(UserID)&&dicKeys[UserID]==sessionid) {
                 dicKeys.Remove(UserID);
             }
         }
@@ -40,15 +42,16 @@ namespace SS.Test.Handler.Strategy
             if (string.IsNullOrEmpty(UserID))
                 return;
             lock (objLock) {
-                if (dicKeys.ContainsKey(UserID)) {
-                    string sessionid = FindSession(UserID);
-                    if (!string.IsNullOrEmpty(sessionid)) {
-                        WrapAppSession sessSource = appSession.AppServer.GetSessionByID(sessionid);
-                        if(sessSource!=null)
-                            sessSource.Close();                        
-                    }
+                string sessionid = FindSession(UserID);
+                if (!string.IsNullOrEmpty(sessionid)) {
+                    WrapAppSession sessSource = appSession.AppServer.GetSessionByID(sessionid);
+                    if (sessSource != null)
+                        sessSource.Close();
                 }
-                dicKeys.Add(UserID, appSession.SessionID);
+                if(dicKeys.ContainsKey(UserID))
+                    dicKeys[UserID] =appSession.SessionID;
+                else
+                    dicKeys.Add(UserID, appSession.SessionID);
             }
             
         }
