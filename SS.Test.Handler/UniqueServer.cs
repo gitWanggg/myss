@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using SS.Service;
 using SuperSocket.SocketBase.Config;
-using SS.Test.Handler.Strategy;
 using SuperSocket.SocketBase;
+using SS.Service.Strategy;
 namespace SS.Test.Handler
 {
     public class UniqueServer:WrapAppServer
