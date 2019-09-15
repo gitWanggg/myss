@@ -36,12 +36,9 @@ namespace SS.Test.Handler
 
         private static void OnSuccess(object sender, ServiceRunEventArgs e)
         {
-            foreach(WrapAppServer server in e.AppServers){
-                if (server.ReceiveFilterFactory is BeginEndReceiveFilter) {
-                    BeginEndReceiveFilter beR = server.ReceiveFilterFactory as BeginEndReceiveFilter;
-                    beR.ILoggerR = server;
-                }
-            }
+            //foreach (WrapAppServer server in e.AppServers) {
+            //    server.AddRunLog("MEI201909120001");
+            //}
             Console.WriteLine("启动成功");
         }
     }

@@ -11,8 +11,8 @@ namespace SS.Test.Handler
 {
     public class InstanceStringFilterFactory:WrapReceiveFilterFactory
     {
-      
-        IReceiveFilter<InstanceRequestInfo> IRFilter;
+
+        BeginEndReceiveFilter IRFilter;
 
         IParseRequestable IParse;
         public InstanceStringFilterFactory()
@@ -21,15 +21,22 @@ namespace SS.Test.Handler
         }
 
         void init()
-        {
+        {            
             IParse = new StringParseRequest();
             BeginEndReceiveFilter begFilter = new BeginEndReceiveFilter(RConstant.BeginMarkByte, RConstant.EndMarkByte);
             begFilter.IParse = IParse;
             IRFilter = begFilter;
+            //Console.WriteLine("FilterFactory Init");
         }
         public override IReceiveFilter<InstanceRequestInfo> CreateFilter(IAppServer appServer, IAppSession appSession, IPEndPoint remoteEndPoint)
         {
             return IRFilter;
+        }
+
+        public override void SettingLogger(ILoggerReceiveable IRLogger)
+        {
+            if (IRFilter != null)
+                IRFilter.ILoggerR = IRLogger;
         }
     }
 }

@@ -48,6 +48,10 @@ namespace SS.Service
                     List<WrapAppServer> listServer = new List<WrapAppServer>();
                     foreach (IWorkItem workItem in bootstrap.AppServers) {
                         WrapAppServer appserver = workItem as WrapAppServer;
+                        if (appserver.ReceiveFilterFactory is ISettingLogger) {
+                            ISettingLogger beR = appserver.ReceiveFilterFactory as ISettingLogger;
+                            beR.SettingLogger(appserver);
+                        }
                         listServer.Add(appserver);
                     }
                     sArgs.OnSuccess(bootstrap, new ServiceRunEventArgs() { StartTime = dtNow, AppServers = listServer });

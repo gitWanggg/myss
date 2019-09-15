@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using SuperSocket.SocketBase;
 namespace SS.Service
 {
-    public abstract class WrapReceiveFilterFactory : IReceiveFilterFactory<InstanceRequestInfo>
+    public abstract class WrapReceiveFilterFactory : IReceiveFilterFactory<InstanceRequestInfo>,ISettingLogger
     {
        
         public WrapReceiveFilterFactory()
@@ -16,7 +16,10 @@ namespace SS.Service
 
         }
         public abstract IReceiveFilter<InstanceRequestInfo> CreateFilter(IAppServer appServer, IAppSession appSession, IPEndPoint remoteEndPoint);
-      
-        
+
+
+
+        public abstract void SettingLogger(ILoggerReceiveable IRLogger);
+       
     }
 }

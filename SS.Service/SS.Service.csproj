@@ -73,6 +73,7 @@
     <Compile Include="Context\IParseRequestable.cs" />
     <Compile Include="ILoggerReceiveable.cs" />
     <Compile Include="IServiceStrategy.cs" />
+    <Compile Include="ISettingLogger.cs" />
     <Compile Include="SessionLoggerLevelR.cs" />
     <Compile Include="SSException.cs" />
     <Compile Include="WrapActionCommand.cs" />
