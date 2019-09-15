@@ -19,7 +19,7 @@ namespace SS.Service
                     return DicHandler[RouteKey];
                 ChainBuilder builder = RouteConfig.FindBuilder(RouteKey);
                 if (builder == null)
-                    throw new KeyNotFoundException("无法识别的路由信息");
+                    throw new SSException("无法识别的路由信息");
                 StreamChainHandler sChain = builder.Builder();
                 DicHandler.Add(RouteKey, sChain);
                 return sChain;

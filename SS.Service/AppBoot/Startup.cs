@@ -68,11 +68,11 @@ namespace SS.Service
             bootstrap = BootstrapFactory.CreateBootstrap();
 
             if (!bootstrap.Initialize()) {
-                throw new Exception("Failed to initialize!");               
+                throw new SSException("Failed to initialize!");               
             }
             var result = bootstrap.Start();         
             if (result == StartResult.Failed) {
-                throw new Exception("Failed to start!");              
+                throw new SSException("Failed to start!");              
             }           
         }
 

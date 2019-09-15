@@ -32,7 +32,7 @@ namespace SS.Service
 
         protected override void HandEnd(HanderContext HContext)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
