@@ -24,7 +24,7 @@ namespace SS.Service
         //{
 
         //}
-        
+        public int LoggerLevel { get; set; }
 
     }
 }

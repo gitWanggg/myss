@@ -20,7 +20,7 @@ namespace SS.Test.Handler.Command
 
         protected override byte[] HandAction(HanderContext context)
         {
-            context.WrapSession.Logger.Debug("这是一个消息");
+            //context.WrapSession.Logger.Debug("这是一个消息");
 
            
             string InputString = System.Text.Encoding.UTF8.GetString(context.RequestInfo.Body);

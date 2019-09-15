@@ -11,6 +11,8 @@ namespace SS.Service
     {
         public IParseRequestable IParse { get; set; }
         public Encoding EncodeType { get; set; }
+
+        public ILoggerReceiveable ILoggerR { get; set; }
         public BeginEndReceiveFilter(string BeginMark,string EndMark)
             :this(BeginMark,EndMark,Encoding.UTF8)
         {
@@ -28,7 +30,16 @@ namespace SS.Service
         }
         protected override InstanceRequestInfo ProcessMatchedRequest(byte[] readBuffer, int offset, int length)
         {
-            return IParse.Parse(readBuffer, offset, length);
+            InstanceRequestInfo IR = IParse.Parse(readBuffer, offset, length);
+            if (ILoggerR != null && ILoggerR.IsDebugger(IR.ID)) {
+                string outString = "";
+                for (int i = offset; i < length; i++) {
+                    outString += readBuffer[i].ToString("X2");
+                }
+                ILoggerR.Logger.Debug(outString);
+            }
+            return IR;
         }
+        
     }
 }
