@@ -9,18 +9,23 @@ namespace SS.Service
     public abstract class WrapActionCommand : CommandBase<WrapAppSession, InstanceRequestInfo>
     {
 
-
+        protected virtual bool IsVoid { get; set; }
         public override void ExecuteCommand(WrapAppSession session, InstanceRequestInfo requestInfo)
         {
             HanderContext context = new HanderContext();
             context.RequestInfo = requestInfo;
             context.Respose = new ResponseInfo();
             context.WrapSession = session;
-            context.ActionHandler = HandAction;
-            StreamChainHandler chainH = ChainFactory.Create(this.Name);
-            chainH.HandStream(context);
-            byte[] hR = context.Respose.ToBytes();
-            session.Send(hR, 0, hR.Length);
+            if (IsVoid) {
+                HandAction(context);
+            }
+            else {
+                context.ActionHandler = HandAction;
+                StreamChainHandler chainH = ChainFactory.Create(this.Name);
+                chainH.HandStream(context);
+                byte[] hR = context.Respose.ToBytes();
+                session.Send(hR, 0, hR.Length);
+            }
         }
 
         protected abstract byte[] HandAction(HanderContext context);

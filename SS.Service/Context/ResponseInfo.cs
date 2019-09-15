@@ -21,6 +21,7 @@ namespace SS.Service
         public byte[] BodyBuffer { get; set; }
         public System.IO.Stream OutputStream { get; set; }
 
+       
         public byte[] ToBytes()
         {
             OutputStream.Seek(0, System.IO.SeekOrigin.Begin);
