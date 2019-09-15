@@ -9,6 +9,9 @@ namespace SS.Service
 {
     public class WrapAppSession:AppSession<WrapAppSession,InstanceRequestInfo>
     {
+        public static int MAXFLOWNO = 65535;
+
+        int mFlowNO = 0;
         /// <summary>
         /// 连接的系统分配的用户ID
         /// </summary>
@@ -24,7 +27,20 @@ namespace SS.Service
         //{
 
         //}
-        public int LoggerLevel { get; set; }
 
+        public int LoggerLevel { get; set; }
+        /// <summary>
+        /// 消息流水号
+        /// </summary>
+        public int MsgNO { get { return mFlowNO; } }
+
+        public int AddFlow()
+        {
+            if (MsgNO < MAXFLOWNO)
+                mFlowNO += 1;
+            else
+                mFlowNO = 0;
+            return mFlowNO;
+        }
     }
 }

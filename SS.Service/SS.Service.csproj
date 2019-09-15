@@ -60,7 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BeginEndReceiveFilter.cs" />
+    <Compile Include="Filters\BeginEndReceiveFilter.cs" />
     <Compile Include="Chain\BodyChainHandler.cs" />
     <Compile Include="Chain\ChainBuilder.cs" />
     <Compile Include="Chain\ChainFactory.cs" />
@@ -86,7 +86,7 @@
     <Compile Include="AppBoot\Startup.cs" />
     <Compile Include="WrapAppServer.cs" />
     <Compile Include="WrapAppSession.cs" />
-    <Compile Include="WrapReceiveFilterFactory.cs" />
+    <Compile Include="Filters\WrapReceiveFilterFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Config\log4net.config" />
