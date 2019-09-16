@@ -9,7 +9,7 @@ namespace SS.Service
     public abstract class WrapActionCommand : CommandBase<WrapAppSession, InstanceRequestInfo>
     {
 
-        protected virtual bool IsVoid { get; set; }
+        protected virtual bool IsVoid { get { return false; } }
         public override void ExecuteCommand(WrapAppSession session, InstanceRequestInfo requestInfo)
         {
             HanderContext context = new HanderContext();
